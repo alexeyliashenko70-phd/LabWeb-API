@@ -22,12 +22,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          if [ -f requirements.txt ]; then 
+          if [ -f ../../../requirements.txt ]; then 
             echo "FOUND REQUIREMENTS.TXT"
           else
             echo "Not found requirements.txt"
           fi
 
-      - name: Check installed dependencies
-        run: python -m pip freeze
+#      - name: Check installed dependencies
+#        run: python -m pip freeze
 
