@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest #ubuntu-20.04
     steps:
 #      - name: Checkout code
-#      - uses: actions/checkout@v3 #Checkout code
+      - uses: actions/checkout@v3 #Checkout code
 
       - name: Print Hello
         run: echo "Hello Alex"
