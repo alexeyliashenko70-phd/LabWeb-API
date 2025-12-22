@@ -16,10 +16,12 @@ jobs:
 #
 #      - name: Check available Pip
 #        run: python -m pip -V
+#
+#      - name: Install dependencies
+#        run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Install dependencies
-        run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        run: if [ -f requirements.txt ]; then echo FOUND REQUIREMENTS.TXT; fi
 
       - name: Check installed dependencies
         run: python -m pip freeze
