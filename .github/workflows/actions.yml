@@ -3,7 +3,7 @@ name: GitHub Actions (Demo CI/CD)
 on:
   push:
     branches: #событи по которому запускают работника
-      - main
+      - master
 
 jobs:
   build_prg:  #название работы
