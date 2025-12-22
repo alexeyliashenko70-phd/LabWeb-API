@@ -17,18 +17,24 @@ jobs:
 #      - name: Check available Pip
 #        run: python -m pip -V
 #
-#      - name: Install dependencies
-#        run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
       - name: Install dependencies
         run: |
-          echo $GITHUB_WORKSPACE;
           if [ -f $GITHUB_WORKSPACE/requirements.txt ]; then 
             echo "FOUND REQUIREMENTS.TXT"
+            pip install -r $GITHUB_WORKSPACE/requirements.txt;
           else
-            echo "Not found requirements.txt"
+            echo "Not found requirements.txt";
           fi
 
-#      - name: Check installed dependencies
-#        run: python -m pip freeze
+#      - name: Install dependencies
+#        run: |
+#          echo $GITHUB_WORKSPACE;
+#          if [ -f $GITHUB_WORKSPACE/requirements.txt ]; then
+#            echo "FOUND REQUIREMENTS.TXT"
+#          else
+#            echo "Not found requirements.txt"
+#          fi
+
+      - name: Check installed dependencies
+        run: python -m pip freeze
 
