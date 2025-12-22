@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           echo $GITHUB_WORKSPACE;
-          if [ -f ./requirements.txt ]; then 
+          if [ -f $GITHUB_WORKSPACE/requirements.txt ]; then 
             echo "FOUND REQUIREMENTS.TXT"
           else
             echo "Not found requirements.txt"
