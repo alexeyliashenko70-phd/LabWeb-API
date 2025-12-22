@@ -21,4 +21,6 @@ jobs:
         run: |
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+      - name: Check installed dependencies
+        run: python -m pip freeze
 
