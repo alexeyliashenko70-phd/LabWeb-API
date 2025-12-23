@@ -1,0 +1,20 @@
+Example endpoint returning about info
+This is using docstrings for specifications.
+---
+parameters:
+  - name: about
+    in: path
+    type: string
+    enum: ['all','version', 'author', 'year']
+    required: true
+    default: all
+definitions:
+  About:
+    type: string
+responses:
+  200:
+    description: A string
+    schema:
+      $ref: '#/definitions/About'
+    examples:
+      version: '1.0'

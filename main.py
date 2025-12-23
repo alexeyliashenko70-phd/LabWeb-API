@@ -2,7 +2,7 @@
 from flask import Flask, jsonify, Blueprint
 
 # Подключение библиотеки для создания автоматической документации API
-from flasgger import Swagger
+from flasgger import Swagger, swag_from
 
 # Подключение части нашего веб-сервиса с использованием Blueprint
 from sitepart.sitepart import sitepart
@@ -20,49 +20,8 @@ main = Blueprint("/", __name__, template_folder='templates',static_folder='stati
 # Информация, которая будет выдаваться по URL/info/something
 # Параметр в <> при вводе URL будет передан в переменную about функции info
 @main.route('/info/<about>/')
+@swag_from('about.yml')
 def info(about):
-    # """Example endpoint returning about info
-    # This is using docstrings for specifications.
-    # ---
-    # parameters:
-    # - name: about
-    # in: path
-    # type: string
-    # enum: ['all','version', 'author', 'year']
-    # required: true
-    # default: all
-    # definitions:
-    # About:
-    # type: string
-    # responses:
-    # 200:
-    # description: A string
-    # schema:
-    # $ref: '#/definitions/About'
-    # examples:
-    # version: '1.0'
-    # """
-    """Example endpoint returning about info
-    This is using docstrings for specifications.
-    ---
-    parameters:
-    - name: about
-    in: path
-    type: string
-    enum: ['all','version', 'author', 'year']
-    required: true
-    default: all
-    definitions:
-    About:
-    type: string
-    responses:
-    200:
-    description: A string
-    schema:
-    $ref: '#/definitions/About'
-    examples:
-    version: '1.0'
-    """
     all_info = {
         'all': 'main_author 1.0 2020',
         'version': '1.0',
