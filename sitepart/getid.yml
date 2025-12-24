@@ -1,0 +1,18 @@
+Получение записи по индексу
+---
+parameters:
+  - name: id
+    in: path
+    type: integer
+    required: true
+    schema:
+      type: integer
+    default: 1
+responses:
+  '200':
+    description: Полный список данных
+    content:
+      application/json:
+        schema: OutputSchema
+  '404':
+    description: Запись с таким индексом отсутствует

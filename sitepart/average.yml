@@ -1,0 +1,16 @@
+Среднее значение по полю speakers или letters или words
+---
+parameters:
+  - name: field
+    in: path
+    required: true
+#    schema:
+#      type: string
+responses:
+  '200':
+    description: Среднее значение по полю
+    content:
+      application/json:
+        schema: OutputSchema
+  '500':
+    description: Поле с таким именем отсутствует

@@ -1,0 +1,26 @@
+Добавляем новую запись
+---
+#requestBody:
+#  required: true
+#  content:
+#    application/json:
+parameters:
+  - name: record
+    in: query
+    required: true
+    explode: false
+    style: simple
+    schema:
+      type: object
+      properties:
+        country: { type: string }
+        language: { type: string }
+        speakers: { type: integer }
+        letters: { type: integer }
+        words: { type: integer }
+responses:
+  '200':
+    description: Добавлена новая запись
+    content:
+      application/json:
+        schema: OutputSchema

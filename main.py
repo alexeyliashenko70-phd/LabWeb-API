@@ -35,7 +35,7 @@ def info(about):
 app.register_blueprint(main,url_prefix='/')
 
 # url_prefix указывает URL в контексте которого будет доступна часть данного Blueprint
-# app.register_blueprint(sitepart,url_prefix='/sitepart')
+app.register_blueprint(sitepart,url_prefix='/sitepart')
 
 # Запуск приложения Flask в режиме debug
 app.run(debug=True)

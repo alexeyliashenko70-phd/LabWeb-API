@@ -1,0 +1,8 @@
+Получение списка всех данных
+---
+responses:
+  '200':
+    description: Полный список данных
+    content:
+      application/json:
+        schema: OutputSchema
