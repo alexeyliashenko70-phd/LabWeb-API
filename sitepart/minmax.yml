@@ -3,9 +3,9 @@
 parameters:
   - name: field
     in: path
+    type: string
+    enum: ['speakers', 'letters', 'words']
     required: true
-#    schema:
-#      type: string
 responses:
   '200':
     description: Запись с минимальным или максимальным значением по полю

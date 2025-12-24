@@ -9,8 +9,14 @@ parameters:
     required: true
     default: all
 definitions:
-  About:
-    type: string
+    id: {type: integer}
+    country: {type: string}
+    language: {type: string}
+    speakers: {type: integer}
+    letters: {type: integer}
+    words: {type: integer}
+#  About:
+#    type: string
 responses:
   200:
     description: A string

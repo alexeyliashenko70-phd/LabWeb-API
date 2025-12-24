@@ -1,13 +1,14 @@
-Среднее значение по полю speakers или letters или words
+Сортировка записей по полю
 ---
 parameters:
   - name: field
     in: path
+    type: string
+    enum: ['id', 'country', 'language', 'speakers', 'letters', 'words']
     required: true
-    enum: ['speakers', 'letters', 'words']
 responses:
   '200':
-    description: Среднее значение по полю
+    description: Отсортировано по полю
     content:
       application/json:
         schema: OutputSchema

@@ -1,29 +1,33 @@
-Добавляем новую запись
+Изменяем запись
 ---
 parameters:
+  - name: id
+    in: path
+    type: integer
+    required: true
   - name: country
     in: query
     type: string
-    required: true
+    required: false
   - name: language
     in: query
     type: string
-    required: true
+    required: false
   - name: speakers
     in: query
     type: integer
-    required: true
+    required: false
   - name: letters
     in: query
     type: integer
-    required: true
+    required: false
   - name: words
     in: query
     type: integer
-    required: true
+    required: false
 responses:
   '200':
-    description: Добавлена новая запись
+    description: Запись изменена
     content:
       application/json:
         schema: OutputSchema
