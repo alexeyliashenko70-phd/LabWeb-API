@@ -152,18 +152,18 @@ def change(id: int):
 
     return jsonify(rec), HTTPStatus.OK
 
-# # Удаляем записи
-# @sitepart.route('/delete/<int:id>', methods=['DELETE'])
-# @swag_from('delete.yml')
-# def delete(id: int):
-#
-#     rec = [rect for rect in DATA if rect['id'] == id]
-#     if len(rec) < 1:
-#         return jsonify({'error': 'no such record.'}), HTTPStatus.NOT_FOUND
-#
-#     DATA.remove(rec[0])
-#
-#     return jsonify(DATA), HTTPStatus.OK
+# Удаляем записи
+@sitepart.route('/delete/<int:id>', methods=['DELETE'])
+@swag_from('delete.yml')
+def delete(id: int):
+
+    rec = [rect for rect in DATA if rect['id'] == id]
+    if len(rec) < 1:
+        return jsonify({'error': 'no such record.'}), HTTPStatus.NOT_FOUND
+
+    DATA.remove(rec[0])
+
+    return jsonify(DATA), HTTPStatus.OK
 
 # Сортировка записей по полю в сторону увеличения значений
 @sitepart.route('/sortIncrease/<field>/', methods=['GET'])
