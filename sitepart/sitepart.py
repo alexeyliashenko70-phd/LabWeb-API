@@ -116,41 +116,41 @@ def add():
 
     return jsonify(DATA[len(DATA)-1]), HTTPStatus.OK
 
-# Обновляем запись
-@sitepart.route('/change/<int:id>/', methods=['PUT'])
-@swag_from('change.yml')
-def change(id: int):
-
-    rec = [rect for rect in DATA if rect['id'] == id]
-    if len(rec) < 1:
-        return jsonify({'error': 'no such record.'}), HTTPStatus.NOT_FOUND
-
-    args = request.args
-
-    country = args.get('country')
-    if country is not None:
-        rec[0]['country'] = country
-
-    language = args.get('language')
-    if language is not None:
-        rec[0]['language'] = language
-
-    speakers = args.get('speakers')
-    if speakers is not None:
-        if 0 <= int(speakers):
-            rec[0]['speakers'] = int(speakers)
-
-    letters = args.get('letters')
-    if letters is not None:
-        if 0 < int(letters):
-            rec[0]['letters'] = int(letters)
-
-    words = args.get('words')
-    if words is not None:
-        if 0 < int(words):
-            rec[0]['words'] = int(words)
-
-    return jsonify(rec), HTTPStatus.OK
+# # Обновляем запись
+# @sitepart.route('/change/<int:id>/', methods=['PUT'])
+# @swag_from('change.yml')
+# def change(id: int):
+#
+#     rec = [rect for rect in DATA if rect['id'] == id]
+#     if len(rec) < 1:
+#         return jsonify({'error': 'no such record.'}), HTTPStatus.NOT_FOUND
+#
+#     args = request.args
+#
+#     country = args.get('country')
+#     if country is not None:
+#         rec[0]['country'] = country
+#
+#     language = args.get('language')
+#     if language is not None:
+#         rec[0]['language'] = language
+#
+#     speakers = args.get('speakers')
+#     if speakers is not None:
+#         if 0 <= int(speakers):
+#             rec[0]['speakers'] = int(speakers)
+#
+#     letters = args.get('letters')
+#     if letters is not None:
+#         if 0 < int(letters):
+#             rec[0]['letters'] = int(letters)
+#
+#     words = args.get('words')
+#     if words is not None:
+#         if 0 < int(words):
+#             rec[0]['words'] = int(words)
+#
+#     return jsonify(rec), HTTPStatus.OK
 
 # # Удаляем записи
 # @sitepart.route('/delete/<int:id>', methods=['DELETE'])
