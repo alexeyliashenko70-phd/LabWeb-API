@@ -21,17 +21,17 @@ main = Blueprint("/", __name__, template_folder='templates',static_folder='stati
 # объявляем декоратор для метода http get
 # Информация, которая будет выдаваться по URL/info/something
 # Параметр в <> при вводе URL будет передан в переменную about функции info
-# @main.route('/info/<about>/')
-# @swag_from('about.yml')
-# def info(about):
-#     all_info = {
-#         'all': 'ЛяшенкоА.Н. 1.0 2025',
-#         'version': '1.0',
-#         'author': 'ЛяшенкоА.Н.',
-#         'year': '2025'
-#     }
-#     result = {about:all_info[about]}
-#     return jsonify(result)
+@main.route('/info/<about>/')
+@swag_from('about.yml')
+def info(about):
+    all_info = {
+        'all': 'ЛяшенкоА.Н. 1.0 2025',
+        'version': '1.0',
+        'author': 'ЛяшенкоА.Н.',
+        'year': '2025'
+    }
+    result = {about:all_info[about]}
+    return jsonify(result)
 
 # Регистрируем основной Blueprint и Blueprint другой части сайта
 app.register_blueprint(main,url_prefix='/')
