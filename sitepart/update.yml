@@ -1,4 +1,4 @@
-Изменяем поля записи
+Изменяем запись
 ---
 parameters:
   - name: id
@@ -8,29 +8,29 @@ parameters:
   - name: country
     in: query
     type: string
-    required: false
+    required: true
   - name: language
     in: query
     type: string
-    required: false
+    required: true
   - name: speakers
     in: query
     type: integer
     minimum: 0
-    required: false
+    required: true
   - name: letters
     in: query
     type: integer
-    required: false
     minimum: 1
+    required: true
   - name: words
     in: query
     type: integer
     minimum: 1
-    required: false
+    required: true
 responses:
   '200':
-    description: Поля записи изменены
+    description: Запись изменена
     content:
       application/json:
         schema: OutputSchema
